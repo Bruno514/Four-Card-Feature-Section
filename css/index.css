@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url("../fonts/Poppins/Poppins-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+html {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(234, 12%, 34%);
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-family: "Poppins-ExtraLight";
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: "Poppins-Bold";
+}
+
+p {
+  color: hsl(229, 6%, 66%);
+  font-size: 14px;
+  font-family: "Poppins-Regular";
+}
+
+main {
+  font-family: "Poppins-Regular";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10rem;
+  height: fit-content;
+  padding-top: 6rem;
+  padding-inline: 1rem;
+}
+
+.about {
+  max-width: 30rem;
+  text-align: center;
+}
+.about p {
+  margin-top: 1rem;
+  font-weight: 400;
+}
+.about strong {
+  font-family: "Poppins-Bold";
+}
+
+.features {
+  margin-top: 4rem;
+  padding-inline: 1rem;
+  display: grid;
+  grid-template: 1fr;
+  grid-template-areas: "superv" "team" "karma" "calc";
+  gap: 1.5rem;
+}
+@media screen and (min-width: 30rem) {
+  .features {
+    grid-template-areas: "superv team" "karma calc";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 60rem) {
+  .features {
+    grid-template-areas: ".      team     ." "superv team  calc" "superv karma calc" ".      karma    .";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: lightgray 0px 8px 20px 0;
+  border-top: solid 0.35rem;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  max-width: 20rem;
+}
+.card p {
+  font-weight: 200;
+}
+.card img {
+  float: right;
+  margin-top: 2rem;
+}
+.card:nth-of-type(1) {
+  grid-area: superv;
+  border-color: hsl(180, 62%, 55%);
+}
+.card:nth-of-type(2) {
+  grid-area: team;
+  border-color: hsl(0, 78%, 62%);
+}
+.card:nth-of-type(3) {
+  grid-area: karma;
+  border-color: hsl(34, 97%, 64%);
+}
+.card:nth-of-type(4) {
+  grid-area: calc;
+  border-color: hsl(212, 86%, 64%);
+}
+
+footer {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=index.css.map */

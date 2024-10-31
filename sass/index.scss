@@ -1,0 +1,116 @@
+@use "./resets" as *;
+@use "./colors" as *;
+@use "./fonts.scss" as *;
+
+html {
+  background-color: $very-light-gray;
+  color: $very-dark-blue;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+h1 {
+  font-family: "Poppins-ExtraLight";
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+  font-family: "Poppins-Bold";
+}
+p {
+  color: $grayish-blue;
+  font-size: 14px;
+  font-family: "Poppins-Regular";
+}
+
+main {
+  font-family: "Poppins-Regular";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10rem;
+  height: fit-content;
+  padding-top: 6rem;
+  padding-inline: 1rem;
+}
+
+.about {
+  max-width: 30rem;
+  text-align: center;
+
+  p {
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+  strong {
+    font-family: "Poppins-Bold";
+  }
+}
+
+.features {
+  margin-top: 4rem;
+  padding-inline: 1rem;
+  display: grid;
+  grid-template: 1fr;
+  grid-template-areas:
+    "superv"
+    "team"
+    "karma"
+    "calc";
+  gap: 1.5rem;
+
+  @media screen and (min-width: 30rem) {
+    grid-template-areas:
+      "superv team"
+      "karma calc";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 60rem) {
+    grid-template-areas:
+      ".      team     ."
+      "superv team  calc"
+      "superv karma calc"
+      ".      karma    .";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: lightgray 0px 8px 20px 0;
+  border-top: solid 0.35rem;
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  max-width: 20rem;
+  p {
+    font-weight: 200;
+  }
+  img {
+    float: right;
+    margin-top: 2rem;
+  }
+  &:nth-of-type(1) {
+    grid-area: superv;
+    border-color: $cyan;
+  }
+  &:nth-of-type(2) {
+    grid-area: team;
+    border-color: $red;
+  }
+  &:nth-of-type(3) {
+    grid-area: karma;
+    border-color: $orange;
+  }
+  &:nth-of-type(4) {
+    grid-area: calc;
+    border-color: $blue;
+  }
+}
+
+footer {
+  margin-top: 1rem;
+}
