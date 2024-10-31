@@ -38,17 +38,17 @@ h2 {
 
 h1 {
   font-family: "Poppins-ExtraLight";
-  font-size: 24px;
+  font-size: clamp(1rem, 1rem + 2vw, 2rem);
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "Poppins-Bold";
 }
 
 p {
   color: hsl(229, 6%, 66%);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Poppins-Regular";
 }
 
@@ -57,19 +57,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 10rem;
   height: fit-content;
   padding-top: 6rem;
   padding-inline: 1rem;
 }
 
 .about {
-  max-width: 30rem;
   text-align: center;
 }
 .about p {
   margin-top: 1rem;
   font-weight: 400;
+  max-width: 30rem;
 }
 .about strong {
   font-family: "Poppins-Bold";
@@ -104,10 +103,11 @@ main {
   border-top: solid 0.35rem;
   border-radius: 0.35rem;
   padding: 1.5rem;
-  max-width: 20rem;
+  max-width: 22rem;
 }
 .card p {
   font-weight: 200;
+  margin-top: 1rem;
 }
 .card img {
   float: right;
@@ -131,7 +131,7 @@ main {
 }
 
 footer {
-  margin-top: 1rem;
+  margin-block: 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */
